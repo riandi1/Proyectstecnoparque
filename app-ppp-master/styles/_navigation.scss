@@ -1,0 +1,63 @@
+.nav {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  z-index: 3;
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  background: $primary-color;
+  box-sizing: border-box;
+  margin: 0 5% 0;
+  @include shadow-general;
+
+  .button-nav-left {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-left: 1px solid $fourth-color;
+  }
+  .button-nav-right {
+    border-right: 1px solid $fourth-color;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+
+  .button-nav {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    &:active {
+      background-color: $third-color;
+      opacity: 0.5;
+    }
+
+    .link-nav {
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      display: flex;
+
+      i {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .button-nav-middle-l {
+    width: 34%;
+    border-left: 1px solid $fourth-color;
+  }
+  .button-nav-middle-r {
+    width: 34%;
+    border-left: 1px solid $fourth-color;
+    border-right: 1px solid $fourth-color;
+  }
+  .button-nav-middle-r2 {
+    width: 34%;
+    border-right: 1px solid $fourth-color;
+  }
+}

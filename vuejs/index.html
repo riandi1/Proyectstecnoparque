@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
+                <v-list>
+                <v-app-bar color="deep-purple accent-4" dark prominent>
+                    <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+                    <v-toolbar-title>My files</v-toolbar-title>
+
+                    <v-spacer></v-spacer>
+
+                    <v-btn icon>
+                        <v-icon>mdi-magnify</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                        <v-icon>mdi-filter</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                        <v-icon>mdi-dots-vertical</v-icon>
+                    </v-btn>
+                </v-app-bar>
+            </v-navigation-drawer>
+
+            <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+                <v-list nav dense>
+                    <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
+                        <v-list-item :to="{path: '/'}">
+                            <v-list-item-title>Foo</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item :to="{path:'/Bar'}">
+                            <v-list-item-title>Bar</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item :to="{path: '/Fizz'}">
+                            <v-list-item-title>Fizz</v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item :to="{path: '/Buzz'}">
+                            <v-list-item-title>Buzz</v-list-item-title>
+                        </v-list-item>
+                    </v-list-item-group>
+                </v-list>
+            </v-navigation-drawer>
+
+            <v-app-bar class="deep-purple accent-4 white--text" app clipped-left>
+                <v-app-bar-nav-icon @click="drawer=true" class="white--text"></v-app-bar-nav-icon>
+                <v-toolbar-title>Vue Router y Vuetify</v-toolbar-title>
+            </v-app-bar color="deep-purple accent-4" dense dark>
+            <v-content>
+                <v-container fluid>
+                    <v-fade-transition mode="out-in">
+                        <router-view></router-view>
+                    </v-fade-transition>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    <!-- <div id="app">
+        <v-app>
+            <v-navigation-drawer v-model="drawer" absolute temporary app clipped>
+                <v-list>
+                    <v-list-item :to="{path: '/'}">
+                        <v-list-item-action>
+                            <v-icon>mdi-{{ icons[0] }}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Inicio</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item :to="{path: '/compras'}">
+                        <v-list-item-action>
+                            <v-icon>mdi-{{ icons[1] }}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Compras</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item :to="{path: '/ventas'}">
+                        <v-list-item-action>
+                            <v-icon>mdi-{{ icons[2] }}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Ventas</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                </v-list>
+            </v-navigation-drawer>
+
+            <v-app-bar class="deep-purple accent-4 white--text" app clipped-left>
+                <v-app-bar-nav-icon @click="drawer=true" class="white--text"></v-app-bar-nav-icon>
+                <v-toolbar-title>Vue Router y Vuetify</v-toolbar-title>
+            </v-app-bar color="deep-purple accent-4" dense dark>
+            <v-content>
+                <v-container fluid>
+                    <v-fade-transition mode="out-in">
+                        <router-view></router-view>
+                    </v-fade-transition>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- <script>
+
+        Vue.use(VueRouter)
+
+        let component1 = { template:'<div class="title">Sección Inicio</div>' }
+        let component2 = { template:'<div class="title">Sección Compras</div>' }
+        let component3 = { template:'<div class="title">Sección Ventas</div>' }
+
+        let router = new VueRouter({
+            routes: [
+                { path: '/', component: component1, },
+                { path: '/compras', component: component2, },
+                { path: '/ventas', component: component3, },
+                { path: '*', redirect: '/' }
+            ]
+        })
+
+        new Vue({
+            el: '#app',
+            router,
+            vuetify: new Vuetify(),
+            data: () => ({
+                icons: ['home', 'point-of-sale', 'shopping'],
+                drawer: false,
+            })
+        })
+    </script> -->
+    <script>
+        Vue.use(VueRouter)
+        let component1 = { template: '<div>Foo</div>' }
+        let component2 = { template: '<div>Bar</div>' }
+        let component3 = { template: '<div>Fizz</div>' }
+        let component4 = { template: '<div>Buzz</div>' }
+
+        let router = new VueRouter({
+            routes: [
+                { path: '/', component: component1, },
+                { path: '/Bar', component: component2, },
+                { path: '/Fizz', component: component3, },
+                { path: '/Buzz', component: component4, },
+                { path: '*', redirect: '/' },
+            ]
+        })
+        new Vue({
+            el: '#app',
+            router,
+            vuetify: new Vuetify(),
+            data: () => ({
+                drawer: false,
+            })
+        })
+    </script>
+</body>
+
+</html>

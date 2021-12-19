@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>View router</h1>
+        <router-link to="/">Inicio</router-link>
+        <router-link to="/compras">compras</router-link>
+        <router-link to="/ventas">ventas</router-link>
+        <router-view></router-view>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script>
+        const Inicio = {template: '<div>seccion inicio</div>'}
+        const Compra = {template: '<div>seccion compras</div>'}
+        const Ventas = {template: '<div>seccion Ventass</div>'}
+
+        const routes = [
+            {path:'/',component: Inicio},
+            {path:'/compras',component: Compra},
+            {path:'/ventas',component: Ventas}
+        ]
+
+        const router = new VueRouter({
+            routes
+        })
+
+        new Vue({
+            router
+        }).$mount('#app')
+    </script>
+
+</body>
+
+</html>

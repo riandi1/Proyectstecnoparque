@@ -1,0 +1,151 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: fa5-proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  background: $secondary-color;
+  margin-bottom: 80px;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+#__next {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+#__next > div{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.link-nav {
+  text-decoration: none;
+  color: black;
+}
+
+@mixin shadow-general {
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.app-container {
+  padding: 0 10px 0px;
+  display: flex;
+  min-height: 500px;
+  height: 92%;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.button-1 {
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 10px;
+  background: $third-color;
+
+  &:hover {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+.button-2 {
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 10px;
+  background: $third-color;
+
+  &:hover {
+    background: $primary-color;
+    color: white;
+  }
+}
+
+.button-delete {
+  margin: 20px;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 10px;
+  background: $delete-2nd-color;
+
+  &:hover {
+    background: $delete-color;
+  }
+}
+
+.float-button{
+  position: fixed;
+  top: 85vh;
+  left: 80%;
+  font-size: 3rem;
+  color: $primary-color;
+}
+
+.highlight {
+  font-weight: 700;
+}
+
+.fa-plus {
+  color: $primary-color;
+}
+
+.fa-times {
+  color: $delete-2nd-color;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 500px;
+
+  .input-form {
+    color: black;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(246, 248, 249, 1) 0%,
+      rgba(245, 252, 254, 1) 100%
+    );
+  }
+}
+
+@media (min-width: 786px) {
+  #__next {
+    width: 100%;
+  }
+  #__next > div{
+    width: 100%;
+  }
+}

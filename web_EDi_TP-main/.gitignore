@@ -1,0 +1,9 @@
+*.jpg
+assets
+html
+libs
+node
+views
+.DS_Store
+.ftpconfig
+.htaccess

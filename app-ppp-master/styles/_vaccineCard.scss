@@ -1,0 +1,21 @@
+.vaccine-card{
+    border-radius: 10px;
+    @include shadow-general;
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 786px) {
+    .vaccine-card {
+        width: 40%;
+    }
+}

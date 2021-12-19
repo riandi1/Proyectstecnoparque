@@ -1,0 +1,10 @@
+<table>
+    <tr>
+        <th>nombre</th>
+        <th>apellido</th>
+    </tr>
+    <tr>
+        <td>Andres Mauricio</td>
+        <td>Diaz</td>
+    </tr>
+</table>

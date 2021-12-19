@@ -1,0 +1,30 @@
+/* :root{
+  --colorOn: yellow;
+  --colorOff: blue;
+} */
+
+#botonEnviarId{
+  background-color:#007DCC;
+  box-shadow: 0px 3px 0px 0px darken(#007DCC,10%);
+}
+
+#botonEnviarId:hover{
+  background-color: lighten(#007DCC,2%);
+  cursor: pointer;
+}
+
+#botonEnviarId:active{
+  transform: translate(0px, 6px);
+  background-color: blue;
+  box-shadow: 0px 1px 0px 0px #0066A6;
+}
+
+/* elento i despues de un elemento con id='switchLamp1' hijos del mismo padre */
+.inputSwitch+i::before{
+  /* background-color: var(--btnTest,blue); */
+  background-color: var(--colorOff,grey);
+}
+
+.labelSw{
+  background-color: grey ;
+}

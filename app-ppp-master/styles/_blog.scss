@@ -1,0 +1,237 @@
+.blog {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  .blog-cards-container {
+    width: 100%;
+    overflow: scroll;
+    padding: 30% 5px 50%;
+    box-sizing: border-box;
+  }
+}
+
+.blog-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 280px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  background: white;
+  @include shadow-general;
+
+  .blog-img-card-box {
+    width: 100%;
+    height: 30%;
+
+    .blog-img-card {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .blog-info-card {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .blog-info-card-text {
+      margin-top: 10px;
+      padding-left: 10px;
+      align-self: start;
+    }
+
+    .blog-info-card-buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      .blog-description {
+        width: 70%;
+      }
+
+      .blog-button-card {
+        padding: 10px;
+        margin-left: 15px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        @include shadow-general;
+        color: white;
+      }
+    }
+  }
+}
+
+.blog-modal {
+  box-sizing: border-box;
+  border-radius: 30px;
+  border: 1px solid black;
+  background: white;
+  padding: 10px;
+  padding-top: 5px;
+  @include shadow-general;
+  width: 94%;
+  height: 85%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  z-index: 6;
+  .close-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    i {
+      font-size: 24px;
+    }
+  }
+  .modal-info {
+    width: 100%;
+    height: 90%;
+    overflow: scroll;
+    padding: 10px;
+    box-sizing: border-box;
+    h2 {
+      margin: 5px;
+      text-align: center;
+    }
+    h4 {
+      margin: 5px;
+      text-align: center;
+    }
+    .blog-info-img {
+      width: 100%;
+      height: 40%;
+      object-fit: cover;
+    }
+    p {
+      text-align: justify;
+      white-space: pre-line;
+      margin-top: 10px;
+      width: 100%;
+    }
+    .feedback-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      box-sizing: border-box;
+      padding: 5px;
+      .like-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        p {
+          margin: 5px;
+        }
+        i {
+          color: $primary-color;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+      .button-1 {
+        width: 100px;
+        margin: 5px 0;
+        height: 40px;
+      }
+      .share-button {
+        position: relative;
+        .social-container {
+          position: absolute;
+          top: -100%;
+          width: 100%;
+          left: 0;
+          display: none;
+          justify-content: space-around;
+          align-items: center;
+          background-color: white;
+          padding: 10px;
+          box-sizing: border-box;
+          border: 1px solid black;
+          border-radius: 10px;
+          &:hover {
+            display: flex;
+          }
+        }
+        &:hover .social-container {
+          display: flex;
+        }
+      }
+    }
+    .comment-input {
+      display: none;
+      width: 100%;
+      border: 1px solid gray;
+      margin: 5px 0;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    .comment-button {
+      display: none;
+      width: 100px;
+      height: 40px;
+      margin-left: 100px;
+    }
+    .comments-container {
+      padding-top: 10px;
+      .comment-info {
+        height: auto;
+        border-radius: 20px;
+        padding: 10px 15px;
+        background: linear-gradient(145deg, $fifth-color, $sixth-color);
+        margin: 5px;
+        p {
+          margin: 0;
+          text-align: justify;
+          .span-text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 786px) {
+  .blog-card {
+    width: 100% !important;
+    height: 500px !important;
+  }
+
+  .blog-modal {
+    width: 80% !important;
+    margin-left: 10% !important;
+    height: 90% !important;
+    margin-top: 5% !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .blog {
+    justify-content: center;
+    .blog-cards-container {
+      width: 60%;
+    }
+  }
+  .blog-modal {
+    width: 70% !important;
+    margin-left: 15% !important;
+    height: 80% !important;
+
+  }
+}

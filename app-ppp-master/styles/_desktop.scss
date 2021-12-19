@@ -1,0 +1,166 @@
+@media (min-width:769px){
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #root{
+            width: 100%;
+        }
+    }
+    .header{
+        width: 100%;
+    }
+    .app-container{
+        overflow: auto;
+        width: 100%;
+        align-self: center;
+    }
+    .title{
+        left: 0;
+        transform: translateX(-150px);
+    }
+    .blog{
+        width: 100%;
+        .blog-cards-container{
+           display: flex;
+           flex-wrap: wrap;
+           padding: 100px 0;
+           overflow: auto;
+            .blog-card{
+                width: 46%;
+                margin: 20px;
+                height: 330px;
+                .blog-img-card-box{
+                    height: 50%;
+                }
+                .blog-info-card{
+                    height: 50%;
+                    justify-content: center;
+                }
+                .blog-modal-form{
+                    width: 50%;
+                    left: 22%;
+                    img{
+                        height: 60%;
+                    }
+                }
+            }
+        }
+    }
+    .blog-modal{
+        width: 70%;
+        margin-left: 15%;
+        height: 80%;
+        margin-top:7%;
+    }
+    .home{
+        .cards-container{
+            display: flex;
+            justify-content: space-between;
+           flex-wrap: wrap;
+           padding: 100px 0;
+           overflow: auto;
+           .link-nav{
+               width: 46%;
+               display: flex;
+               justify-content: center;
+            }
+            .card{
+                width: 80%;
+                margin: 20px;
+            }
+        }
+    }
+    .user-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        .user{
+            padding: 5px;
+            height:50%;
+            width: 50%;
+            overflow: auto;
+            .user-content p{
+                width: 50%;
+            }
+        }
+    }
+    .help{
+        height: auto;
+        align-items: flex-end;
+        justify-content: center;
+        .help-container{
+            height: 50%;
+            margin: 20px;
+            width: 50%;
+            overflow: visible;
+            padding: 0;
+        }
+
+    }
+    .nav{
+        width: 50%;
+        left: 20%;
+        i{
+            font-size: 26px;
+        }
+    }
+    .form-login,.form-register,.form-update{
+        width: 50%;
+    }
+    .profiles{
+        width: 50%;
+        .profiles-content{
+            width: 80%;
+            .profiles-list-container{
+                overflow: visible;
+                .profile-item{
+                    min-width: 30%;
+                }
+            }
+        }
+        .modal-form{
+            width: 50%;
+            left: 22%;
+        }
+    }
+    .little-container{
+        width: 50%;
+        padding-bottom: 70px;
+        .little{
+            overflow: visible;
+            .little-content{
+                .little-img{
+                    width: 250px;
+                }
+                .buttons{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:1024px){
+    .blog {
+        .blog-cards-container{
+            margin-top: 60px;
+        }
+    }
+    .home{
+        .cards-container{
+            margin-top: 60px;
+        }
+    }
+    .user-container{
+        .user{
+            width: 60%;
+            .user-content{
+                width: 100%;
+            }
+        }
+    }
+}

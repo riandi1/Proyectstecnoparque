@@ -1,0 +1,34 @@
+.title{
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    transform: translateX(-10%);
+    width: 120%;
+    height: 22%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: white;
+    align-self: center;
+    @include shadow-general;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        width: 60%;
+        font-size: 22px;
+        text-align: center;
+        transform: translateY(20px);
+    }
+}
+
+@media (min-width:786px) {
+    .title {
+    width: 130%;
+    }
+}
+
+@media (min-width:1440px) {
+    .title {
+    width: 110%;
+    }
+}

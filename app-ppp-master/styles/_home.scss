@@ -1,0 +1,47 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  .cards-container {
+    width: 100%;
+    overflow: scroll;
+    padding: 34% 5px 50%;
+    box-sizing: border-box;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .button-1 {
+      border: 1px solid black;
+      @include shadow-general;
+    }
+  }
+}
+
+@media (min-width: 786px) {
+  .home {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .cards-container {
+      width: 100%;
+      div {
+          width: 50%;
+      }
+      .card {
+          width: 90% !important;
+      }
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  .home{
+    .cards-container{
+      margin-top: 90px !important;
+    }
+  }
+}
